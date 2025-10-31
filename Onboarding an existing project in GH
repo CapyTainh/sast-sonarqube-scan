@@ -1,0 +1,27 @@
+Step 1: Get Your Vulnerable app/repo
+Go to -> https://github.com/WebGoat/WebGoat
+Fork the Repository -> Click the "Fork" button in the top-right corner. This creates your own copy of WebGoat under your GitHub account
+
+Step 2: Set Up Your SonarCloud Account
+Go to SonarCloud -> https://sonarcloud.io
+Authorize -> SonarCloud to access your GitHub account
+Import Your Project -> In the SonarCloud dashboard, click the "+" icon and select "Analyze new project".
+
+Step 3: Connect GitHub to SonarCloud (Crucial Step)
+Generate Sonar Token -> In the SonarCloud project setup generate a token, give it a name (GH_ACTIONS_TOKEN), and copy the generated token string.
+Go to GitHub Secrets -> In your scanned repo on GitHub, go to Settings > Secrets and variables > Actions.
+Create New Secret -> Click "New repository secret" (Name: SONAR_TOKEN) and Value (the token string copied).
+
+Step 4: Create the GitHub Actions Workflow (The Automation)
+In your repo -> click "Add file" button and "Create new file"
+Name the file -> .github/workflows/sonarscan.yml
+Set up the workflow file (yml file) -> depending on which code you will perform the scan (Java/C/C++/Python) - https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/ci-based-analysis/github-actions-for-sonarcloud
+Set up the rest of the tokens in the yml file, depending on the technology - set up the Your_OrganizationKey_From_SonarCloud (URL of browser) and/or the Your_ProjectKey_From_SonarCloud (project key from Sonar)
+
+Step 5: Run, Analyze, and Perfect Your Project
+Set up your Permissions -> Create Security Templates and provide the correct permissions for the users/groups.
+Personalize the Quality Gates & Quality Profiles and assign them to your projects
+Make sure that the 
+
+
+
